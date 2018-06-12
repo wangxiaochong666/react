@@ -9,8 +9,8 @@ import React,{Component} from 'react';
  			color:'red',
  			textAlign:'center',
  			lineHeight:'50px',
- 			borderBottom:'1px solid #ccc',
- 			cursor:'pointer'
+ 			borderBottom:'1px solid yellow',
+ 			cursor:'pointer',
  		}
  		return(
  			<div onClick={this.props.onHead} style={Itemstyle}>我是{like}header</div>

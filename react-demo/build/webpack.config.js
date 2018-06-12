@@ -1,8 +1,11 @@
-var path=require('path');
-var webpack=require('webpack');
-var htmlWebpackPlugin=require('html-webpack-plugin');
-var cleanWebpckPlugin=require('clean-webpack-plugin');
-var config={
+const path=require('path');
+const webpack=require('webpack');
+const htmlWebpackPlugin=require('html-webpack-plugin');
+const cleanWebpckPlugin=require('clean-webpack-plugin');
+const extractWebpackPlugin=require('extract-text-webpack-plugin');
+const cssEXT=new extractWebpackPlugin('css.css');
+const sassEXT=new extractWebpackPlugin('sass.sass');
+const config={
 	mode:'development',
 	entry:{
 		main:`./src/main.js`,
@@ -32,6 +35,57 @@ var config={
 				test:/\.(js|jsx)$/,
 				use:['babel-loader'],
 				exclude: /node_modules/
+			},
+			{
+				test:/\.(css|postcss)$/,
+				loader:cssEXT.extract({
+					fallback:{
+						loader:'style-loader',
+						options:{
+							sourceMap:true
+						}
+					},
+					use:[
+						{
+							loader:'css-loader',
+							options:{sourceMap:true}
+
+						},
+						{
+							loader:'postcss-loader',
+							options:{sourceMap:true}
+
+						},
+					]
+				})
+			},
+			{
+				test:/\.(scss|sass)$/,
+				loader:cssEXT.extract({
+					fallback:{
+						loader:'style-loader',
+						options:{
+							sourceMap:true
+						}
+					},
+					use:[
+						{
+							loader:'css-loader',
+							options:{sourceMap:true}
+
+						},
+						{
+							loader:'postcss-loader',
+							options:{sourceMap:true}
+
+						},
+						{
+							loader:'sass-loader',
+							options:{sourceMap:true}
+
+						},
+					]
+				})
 			}
 		]
 	},
@@ -43,7 +97,8 @@ var config={
 		new htmlWebpackPlugin({
 			title:'react-demo',
 			template:'index.html',
-		})
+		}),
+		cssEXT,sassEXT
 	]
 }
 module.exports=config;
