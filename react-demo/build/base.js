@@ -29,7 +29,7 @@ const config={
 		rules:[
 			{
 				test:/\.(js|jsx)$/,
-				use:['babel-loader'],
+				use:['babel'],
 				include: [resolve('src')],
 			},
 		]
