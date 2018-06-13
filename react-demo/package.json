@@ -25,12 +25,13 @@
     "postcss-loader": "^2.1.5",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config build/webpack.config.js",
-    "dev": "webpack-dev-server --config build/webpack.config.js --open --hot"
+    "build": "webpack --config build/build.js",
+    "dev": "webpack-dev-server --config build/dev-server.js"
   },
   "author": "",
   "license": "ISC"
