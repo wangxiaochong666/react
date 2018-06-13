@@ -1,0 +1,9 @@
+Children.count(this.props.children)  返回子组件的总数量
+ReactDom.findDOMNode(this)  获取当前组件的实例
+
+类数组转数组：
+	Array.from    [...arr]
+深拷贝
+	$.extend  Object.create JSON.parse(JSON.stringify(obj)) 
+浅拷贝
+	Object.assion 
