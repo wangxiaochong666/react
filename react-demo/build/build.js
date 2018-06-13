@@ -4,11 +4,12 @@ const htmlWebpackPlugin=require('html-webpack-plugin');
 const cleanWebpckPlugin=require('clean-webpack-plugin');
 const extractWebpackPlugin=require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const copyPlugin = require('copy-webpack-plugin');
 const cssEXT=new extractWebpackPlugin({
-  filename: 'css/css.css',
+  filename: 'static/css/css.css',
 });
 const sassEXT=new extractWebpackPlugin({
-  filename: 'css/css.css',
+  filename: 'static/css/css.css',
 });
 const baseConfig = require('./base');
 function resolve(dir) {
@@ -78,6 +79,13 @@ const buildConfig = merge(baseConfig,{
 		new cleanWebpckPlugin(['dist'],{
 			root:path.join(__dirname,'..')
 		}),
+		new copyPlugin([
+	      {
+	        from: resolve('static'),
+	        to: resolve('dist/static'),
+	        ignore: ['.*']
+	      }
+	    ]),
 		new UglifyJsPlugin(),
 		new htmlWebpackPlugin({
 			title:'react-demo',
@@ -86,9 +94,6 @@ const buildConfig = merge(baseConfig,{
 				collapseWhitespace: true,
 			}
 		}),
-		// new extractWebpackPlugin({
-		// 	filename:'css_[hash:6].css'
-		// })
 		cssEXT,sassEXT,
 		
 	]

@@ -1,5 +1,4 @@
 const path=require('path');
-// const extractWebpackPlugin=require('extract-text-webpack-plugin');
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
 }
@@ -14,7 +13,7 @@ const config={
 	// 上下文
     context: resolve('.'),
 	output:{
-		filename:'js/[name]-[hash:5].js',
+		filename:'static/js/[name]-[hash:5].js',
 		path:path.join(__dirname,'..','dist')
 	},
 	resolve:{
@@ -33,35 +32,6 @@ const config={
 				use:['babel-loader'],
 				include: [resolve('src')],
 			},
-			// {
-				// 	test:/\.(css|scss|sass)$/,
-				// 	include: [resolve('src')],
-				// 	use:extractWebpackPlugin.extract({
-				// 		fallback:{
-				// 			loader:'style',
-				// 			options:{
-				// 				sourceMap:true
-				// 			}
-				// 		},
-				// 		use:[
-				// 			{
-				// 				loader:'css',
-				// 				options:{sourceMap:true}
-
-				// 			},
-				// 			{
-				// 				loader:'postcss',
-				// 				options:{sourceMap:true}
-
-				// 			},
-				// 			{
-				// 				loader:'sass',
-				// 				options:{sourceMap:true}
-
-				// 			},
-				// 		]
-				// 	})
-			// }
 		]
 	},
 }

@@ -1,6 +1,7 @@
 const path=require('path');
 const webpack=require('webpack');
 const merge = require('webpack-merge');
+const htmlWebpackPlugin=require('html-webpack-plugin');
 const baseConfig = require('./base');
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
@@ -43,12 +44,18 @@ const devConfig = merge(baseConfig,{
 		noInfo:false,
 		//主机
 		host:'localhost', 
+		// host: '127.0.0.2',
 		//统计 stats
 		//不跳转 
 		historyApiFallback:true
 	},
 
 	plugins:[
+		new htmlWebpackPlugin({
+			title:'react-demo',
+			template:'index.html',
+			// favicon: './static/favicon.ico'
+		}),
 		new webpack.HotModuleReplacementPlugin()
 	]
 })
