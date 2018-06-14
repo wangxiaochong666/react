@@ -1,6 +1,9 @@
 Children.count(this.props.children)  返回子组件的总数量
 ReactDom.findDOMNode(this)  获取当前组件的实例
 
+refs:用法 
+	在dom元素上添加ref='string', 在componentDidMount(DOM渲染完成)	 this.refs['string']
+	在dom元素上添加ref={e=>this.attr=e}, 在componentDidMount(DOM渲染完成)	 this.attr   (不建议使用)
 类数组转数组：
 	Array.from    [...arr]
 深拷贝
