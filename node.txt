@@ -4,6 +4,44 @@ ReactDom.findDOMNode(this)  获取当前组件的实例
 refs:用法 
 	在dom元素上添加ref='string', 在componentDidMount(DOM渲染完成)	 this.refs['string']
 	在dom元素上添加ref={e=>this.attr=e}, 在componentDidMount(DOM渲染完成)	 this.attr   (不建议使用)
+
+通信
+	子-》父		回调函数，调用父组件方法
+	父-》子		props
+	同级组件-》同级组件	插件events
+			npm i -D events
+			新建文件 emmiter.js
+				import { EventEmitter } from 'events';
+				export default new EventEmitter();	
+			在需要的组件引入该文件
+				广播：emmier.emit ( fnName,参数 )
+				接收：emmier.on ( fnName,()=>{}  )
+	跨级通信		props
+			events
+			context(上下文)
+				npm i -D prop-types
+				子组件：
+					获取：this.context.attr
+					验证：static contextProps={  attr:PropTypes.类型  }
+				祖宗组件
+					设置：getChildContext(){ return{  attr : val   }   }
+					验证：static childContextProps={  attr:PropTypes.类型  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 类数组转数组：
 	Array.from    [...arr]
 深拷贝

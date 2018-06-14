@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import './Tab.scss';
 import TabTit from './TabTit';
 import TabCon from './TabCon';
+import PropTypes from 'prop-types';
 export default class Tab extends Component{
 	constructor(){
 		super();
@@ -20,6 +21,10 @@ export default class Tab extends Component{
 			],
 			activeIndex:0
 		}
+	}
+	// 
+	static contextTypes={
+		name:PropTypes.string
 	}
 	showContent=(idx)=>{
 		this.setState((item)=>{
@@ -50,6 +55,7 @@ export default class Tab extends Component{
 						})
 					}
 				</div>
+				{this.context.name}
 			</div>
 		)
 	}

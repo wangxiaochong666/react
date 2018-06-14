@@ -2,11 +2,20 @@
  import Headers from './components/Header';
  import Content from './components/Content';
  import Footers from './components/Footer';
+ import PropTypes from 'prop-types';
  export default class Renders extends Component{
  	constructor(){
  		super();
  		this.state={
  			isHeader:false
+ 		}
+ 	}
+ 	static childContextTypes={
+ 		name:PropTypes.string
+ 	}
+ 	getChildContext(){
+ 		return {
+ 			name:'我是Render组件通过context传给当前组件的'
  		}
  	}
  	onHead=(show)=>{

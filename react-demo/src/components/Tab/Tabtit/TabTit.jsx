@@ -1,6 +1,12 @@
 import React,{Component} from 'react';
 import './TabTit.scss';
+import emitter from '../../../common/js/emitter';
 export default class TabTit extends Component{
+	componentDidMount(){
+		emitter.on('emitfunc',(val)=>{
+			console.log(val)
+		})
+	}
 	showItem=()=>{
 		this.props.showContent(this.props.index)
 	}
