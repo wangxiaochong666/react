@@ -2,6 +2,7 @@
  import Headers from './components/Header';
  import Content from './components/Content';
  import Footers from './components/Footer';
+ import Qq from './components/Qq';
  import PropTypes from 'prop-types';
  export default class Renders extends Component{
  	constructor(){
@@ -38,15 +39,18 @@
 			borderBottom:'1px solid yellow',
 			cursor:'pointer',
 		}
+		// <div style={Itemstyle}>
+		// 	<Headers isHeader={this.state.isHeader} onHead={this.onHead}></Headers>
+		// 	<Content>
+		// 		<ul>
+		// 			<li>1</li>
+		// 		</ul>
+		// 	</Content>
+		// 	<Footers />
+		// </div>
  		return(
  			<div style={Itemstyle}>
- 				<Headers isHeader={this.state.isHeader} onHead={this.onHead}></Headers>
- 				<Content>
- 					<ul>
- 						<li>1</li>
- 					</ul>
- 				</Content>
- 				<Footers />
+ 				<Qq />
  			</div>
  		)
  	}
