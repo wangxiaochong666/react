@@ -2,10 +2,81 @@ import React,{Component} from 'react';
 import './Qq.scss';
 import Lists from './Lists';
 export default class Qq extends Component{
+	constructor(){
+		super();
+		this.state={
+			lists:[
+				{
+					states:0,
+					title:'列表1',
+					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
+				},{
+					states:0,
+					title:'列表2',
+					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
+				},{
+					states:0,
+					title:'列表3',
+					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
+				},{
+					states:0,
+					title:'列表4',
+					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
+				},{
+					states:0,
+					title:'列表5',
+					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
+				},{
+					states:0,
+					title:'列表6',
+					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
+				},{
+					states:0,
+					title:'列表7',
+					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
+				},{
+					states:0,
+					title:'列表8',
+					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
+				},{
+					states:0,
+					title:'列表9',
+					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
+				},{
+					states:0,
+					title:'列表10',
+					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
+				},{
+					states:0,
+					title:'列表11',
+					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
+				},{
+					states:0,
+					title:'列表12',
+					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
+				}
+
+			]
+		}
+	}
+	changeList=(idx)=>{
+		this.setState(item=>{
+			return item.lists[idx].states=1;
+		})
+	}
 	render(){
 		return(
-			<div>
-				<Lists />
+			<div className='over-dom'>
+				{
+					this.state.lists.map((item,idx)=>{
+						return <Lists key={idx}
+						title={item.title}
+						idx={idx}
+						src={item.src} 
+						states={item.states}
+						changeList={this.changeList} />
+					})
+				}
 			</div>
 		)
 	}

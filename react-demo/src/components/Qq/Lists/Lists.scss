@@ -1,0 +1,18 @@
+.list-item{
+	height:90px;
+	line-height:90px;
+	transition: all .5s linear;
+	img{
+		width:80px;
+		height:80px;
+		margin:5px;
+		vertical-align: middle;
+	}
+	span{
+		padding-left:20px;
+		color:blue;
+	}
+	&.action{
+		transform:translateX(-60px);
+	}
+}
