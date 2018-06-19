@@ -18,17 +18,16 @@ export default class Lists extends Component{
 		this.setState({
 			touchX:e.touches[0].clientX-startX
 		})
-
 	}
 	touchend=(e)=>{
 		var {touchX}=this.state;
-
 		if(touchX<0){
 			this.props.changeList(this.props.idx);
+			this.setState({
+				startX:0,
+				touchX:0
+			})
 		}
-		// else{
-		// 	e.target.style.transform='translateX(0px)'
-		// }
 	}
 	render(){
 		var action=this.props.states?'action':'';
@@ -39,6 +38,7 @@ export default class Lists extends Component{
 			onTouchEnd={this.touchend}>
 				<img src={this.props.src} />
 				<span>{this.props.title}</span>
+				<div className='delete'>删除</div>	
 			</div>
 		)
 	}

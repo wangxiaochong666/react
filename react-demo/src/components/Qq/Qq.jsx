@@ -7,7 +7,7 @@ export default class Qq extends Component{
 		this.state={
 			lists:[
 				{
-					states:0,
+					states:1,
 					title:'列表1',
 					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
 				},{
@@ -55,14 +55,28 @@ export default class Qq extends Component{
 					title:'列表12',
 					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
 				}
+			],
 
-			]
 		}
 	}
 	changeList=(idx)=>{
-		this.setState(item=>{
-			return item.lists[idx].states=1;
-		})
+		var flag=true;
+		var newList=[...this.state.lists];
+		for(var i=0;i<newList.length;i++){
+			if(newList[i].states===1){
+				newList[i].states=0;
+				flag=false;
+			}
+		}
+		if(!flag){
+			this.setState(item=>{
+				return item.lists=newList
+			})
+		}else{
+			this.setState(item=>{
+				return item.lists[idx].states=1;
+			})
+		}	
 	}
 	render(){
 		return(

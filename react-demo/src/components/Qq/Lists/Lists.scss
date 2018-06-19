@@ -2,6 +2,7 @@
 	height:90px;
 	line-height:90px;
 	transition: all .5s linear;
+	position:relative;
 	img{
 		width:80px;
 		height:80px;
@@ -14,5 +15,18 @@
 	}
 	&.action{
 		transform:translateX(-60px);
+		span{
+			color:red;
+		}
+	}
+	.delete{
+		position:absolute;
+		width:60px;
+		height:100px;
+		text-align:center;
+		top:0;
+		left:100%;
+		background:skyblue;
+		color:#fff;
 	}
 }
