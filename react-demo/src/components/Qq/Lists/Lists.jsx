@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import './Lists.scss';
+import PropTypes from 'prop-types';
 export default class Lists extends Component{
 	constructor(props){
 		super(props);
@@ -7,6 +8,15 @@ export default class Lists extends Component{
 			startX:0,
 			touchX:0,
 		}
+	}
+	static propTypes={
+		title:PropTypes.string,
+		states:PropTypes.number,
+		changeList:PropTypes.func,
+		src:PropTypes.string.isRequired
+	}
+	static defaultProps={
+		src:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3726983732,1319823109&fm=27&gp=0.jpg'
 	}
 	touchstart=(e)=>{
 		this.setState({
@@ -29,16 +39,29 @@ export default class Lists extends Component{
 			})
 		}
 	}
+	deleteFn=(e)=>{
+		this.props.deleteFn(this.props.idx)
+	}
+	get action(){
+		return this.props.states?'action':'';
+	}
+	set titleFn(val){
+		if(this.props.title.indexOf('列表')!==-1){
+			this.title=val+this.props.title.split('列表')[1]
+		}
+	}
 	render(){
-		var action=this.props.states?'action':'';
+		this.titleFn='我是你的好友'
+		// console.log(this.title)
+		// var action=this.props.states?'action':'';
 		return (
-			<div className={`list-item ${action}`}
+			<div className={`list-item ${this.action}`}
 			onTouchStart={this.touchstart}
 			onTouchMove={this.touchmove}
 			onTouchEnd={this.touchend}>
 				<img src={this.props.src} />
-				<span>{this.props.title}</span>
-				<div className='delete'>删除</div>	
+				<span>{this.title}</span>
+				<div className='delete' onClick={this.deleteFn}>删除</div>	
 			</div>
 		)
 	}

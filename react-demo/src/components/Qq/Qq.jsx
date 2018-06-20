@@ -8,8 +8,7 @@ export default class Qq extends Component{
 			lists:[
 				{
 					states:1,
-					title:'列表1',
-					src:'https://imgsa.baidu.com/forum/w%3D580/sign=d6335b499525bc312b5d01906ede8de7/a896167adab44aedd5b53063bf1c8701a38bfbc9.jpg'
+					title:'列表1'
 				},{
 					states:0,
 					title:'列表2',
@@ -59,6 +58,13 @@ export default class Qq extends Component{
 
 		}
 	}
+	deleteFn=(idx)=>{
+		var newList=[...this.state.lists];
+		newList.splice(idx,1)
+		this.setState(item=>{
+			return item.lists=newList
+		})
+	}
 	changeList=(idx)=>{
 		var flag=true;
 		var newList=[...this.state.lists];
@@ -88,7 +94,8 @@ export default class Qq extends Component{
 						idx={idx}
 						src={item.src} 
 						states={item.states}
-						changeList={this.changeList} />
+						changeList={this.changeList}
+						deleteFn={this.deleteFn} />
 					})
 				}
 			</div>
