@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import './Qq.scss';
 import Lists from './Lists';
+import Footer from '../Footer';
 export default class Qq extends Component{
 	constructor(){
 		super();
@@ -86,18 +87,21 @@ export default class Qq extends Component{
 	}
 	render(){
 		return(
-			<div className='over-dom'>
-				{
-					this.state.lists.map((item,idx)=>{
-						return <Lists key={idx}
-						title={item.title}
-						idx={idx}
-						src={item.src} 
-						states={item.states}
-						changeList={this.changeList}
-						deleteFn={this.deleteFn} />
-					})
-				}
+			<div className='over-dom-box'>
+				<div className='over-dom-content'>
+					{
+						this.state.lists.map((item,idx)=>{
+							return <Lists key={idx}
+							title={item.title}
+							idx={idx}
+							src={item.src} 
+							states={item.states}
+							changeList={this.changeList}
+							deleteFn={this.deleteFn} />
+						})
+					}
+				</div>
+				<Footer />
 			</div>
 		)
 	}
