@@ -21,7 +21,7 @@ const Mine=(props)=>{
 				<li><Link to={`${props.match.url}/three`}>二级3</Link></li>
 			</ul>
 			<Route path='/mine/:type' component={A}></Route>
-			<Route exact xpath={props.match.url} component={B}/>
+			<Route exect path={props.match.url} component={B}/>
 			<Footer />
 		</div>
 	)
