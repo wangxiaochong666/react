@@ -14,7 +14,8 @@ const config={
     context: resolve('.'),
 	output:{
 		filename:'static/js/[name]-[hash:5].js',
-		path:path.join(__dirname,'..','dist')
+		path:path.join(__dirname,'..','dist'),
+		publicPath: '/'
 	},
 	resolve:{
 		extensions: ['.js', '.jsx','.json'],

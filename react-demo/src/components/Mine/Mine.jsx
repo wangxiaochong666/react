@@ -2,14 +2,7 @@ import React,{Component} from 'react';
 import Header from '../Header';
 import Content from '../Content';
 import Footer from '../Footer';
-import {Link,Route} from 'react-router-dom';
-
-const A=({match})=>{
-	return <div>{match.params.type}</div>
-}
-const B=(prop)=>{
-	return <div>这是一级路由才有的标签</div>
-}
+import {Link} from 'react-router-dom';
 const Mine=(props)=>{
 	return (
 		<div>
@@ -20,8 +13,6 @@ const Mine=(props)=>{
 				<li><Link to={`${props.match.url}/two`}>二级2</Link></li>
 				<li><Link to={`${props.match.url}/three`}>二级3</Link></li>
 			</ul>
-			<Route path='/mine/:type' component={A}></Route>
-			<Route exact path={props.match.url} component={B}/>
 			<Footer />
 		</div>
 	)

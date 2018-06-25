@@ -53,7 +53,7 @@ const devConfig = merge(baseConfig,{
 	plugins:[
 		new htmlWebpackPlugin({
 			title:'react-demo',
-			template:'index.html',
+			template:'index.html'
 			// favicon: './static/favicon.ico'
 		}),
 		new webpack.HotModuleReplacementPlugin()

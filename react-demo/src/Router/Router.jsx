@@ -5,23 +5,17 @@ import Mine from '../components/Mine';
 import NoFound from '../components/NoFound';
 import Qq from '../components/Qq';
 import {Route, BrowserRouter as Router,Switch,Redirect} from 'react-router-dom';
-const A=({match})=>{
-	return <div>match.params.type</div>
-}
+import Sub from './../components/SubRou';
 const Routers=()=>(
 	<Router>
 		<Switch>
-			
 			<Route path='/home' component={Home}></Route>
 			<Route path='/shop' component={Qq}></Route>
-			<Route path='/mine' component={Mine}></Route>
-			<Redirect from='/' to='/home' />
+			<Route exact path='/mine' component={Mine}></Route>
+			<Route path='/mine/:type' component={Sub}></Route>
+			<Redirect exact from='/' to='/home' />
 			<Route default component={NoFound}></Route>
-			
 		</Switch>
 	</Router>
 )
-export default Routers; 	
-// <Route exact path='/' component={Home}></Route>
-//<Route exact path='/' render={()=><Redirect to='/Mine/one' />}></Route>
-//<Route exact path='/' render={()=><Redirect to='/home' /> }></Route>
+export default Routers;
