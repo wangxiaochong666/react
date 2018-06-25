@@ -11,14 +11,17 @@ const A=({match})=>{
 const Routers=()=>(
 	<Router>
 		<Switch>
-			<Redirect exact from='/' to='/mine' />
-			<Route exact path='/' component={Home}></Route>
+			
+			<Route path='/home' component={Home}></Route>
 			<Route path='/shop' component={Qq}></Route>
 			<Route path='/mine' component={Mine}></Route>
+			<Redirect from='/' to='/home' />
 			<Route default component={NoFound}></Route>
+			
 		</Switch>
 	</Router>
 )
 export default Routers; 	
 // <Route exact path='/' component={Home}></Route>
 //<Route exact path='/' render={()=><Redirect to='/Mine/one' />}></Route>
+//<Route exact path='/' render={()=><Redirect to='/home' /> }></Route>

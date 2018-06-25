@@ -7,7 +7,7 @@ import {Link,Route} from 'react-router-dom';
 const A=({match})=>{
 	return <div>{match.params.type}</div>
 }
-const B=()=>{
+const B=(prop)=>{
 	return <div>这是一级路由才有的标签</div>
 }
 const Mine=(props)=>{
@@ -21,7 +21,7 @@ const Mine=(props)=>{
 				<li><Link to={`${props.match.url}/three`}>二级3</Link></li>
 			</ul>
 			<Route path='/mine/:type' component={A}></Route>
-			<Route exect path={props.match.url} component={B}/>
+			<Route exact path={props.match.url} component={B}/>
 			<Footer />
 		</div>
 	)
