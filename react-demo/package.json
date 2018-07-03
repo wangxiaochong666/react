@@ -33,7 +33,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config build/build.js",
-    "dev": "webpack-dev-server --config build/dev-server.js"
+    "dev": "webpack-dev-server --config build/dev-server.js",
+    "webpack": "webpack"
   },
   "author": "",
   "license": "ISC"
