@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
-{/* <Link to='/Mine/12'>GO Mine</Link> */}
 function f(props){
 	props.history.push('/mine')
 }

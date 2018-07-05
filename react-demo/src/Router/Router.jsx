@@ -13,9 +13,11 @@ const Routers=()=>(
 			<Route path='/shop' component={Qq}></Route>
 			<Route exact path='/mine' component={Mine}></Route>
 			<Route path='/mine/:type' component={Sub}></Route>
-			<Redirect exact from='/' to='/home' />
+			<Redirect from='/' to='/home' />
 			<Route default component={NoFound}></Route>
 		</Switch>
 	</Router>
 )
 export default Routers;
+//<Route exact path='/mine' render={()=>(<Redirect from='/mine' to='/mine/a' />)}></Route>
+//<Route exact path='/mine' render={()=>(<Redirect push to='/mine/a' />)}></Route>
