@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Route,Link,BrowserRouter as Router} from 'react-router-dom';
+import {Route,NavLink,BrowserRouter as Router} from 'react-router-dom';
 export default class Footers extends Component{
 	render(){
 		var Itemstyle={			
@@ -20,9 +20,9 @@ export default class Footers extends Component{
 		}
 		return(
 			<div style={Itemstyle}>
-				<Link to='/' style={spanStyle}>首页</Link>
-				<Link to='/shop' style={spanStyle}>商城</Link>
-				<Link to='/mine' style={spanStyle}>我的</Link>
+				<NavLink activeStyle={{background:'green'}} to='/home' style={spanStyle}>首页</NavLink>
+				<NavLink activeStyle={{background:'green'}} to='/shop' style={spanStyle}>商城</NavLink>
+				<NavLink activeStyle={{background:'green'}} to='/mine' style={spanStyle}>我的</NavLink>
 			</div>
 		)
 	}
