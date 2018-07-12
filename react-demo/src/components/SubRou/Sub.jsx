@@ -1,12 +1,24 @@
-import React,{Component} from 'react';
-const Sub=({match,history})=>{
-	let {params}=match;
+import React,{Component} from 'react'
+import {connect} from 'react-redux'
+
+const Sub=(props)=>{
+	let {params}=props.match;
 	function goTip(){
-		history.go(-1);
+		props.history.go(-1);
 		// history.push('/mine/b');
 	}
 	return(
-		<div onClick={goTip}>{params.type}</div>
+		<div>
+			<div onClick={goTip}>{params.type}</div>
+			<div>{props.text}</div>
+		</div>
 	)
 }
-export default Sub;
+const mapStateToProps=(state,action)=>{
+	console.log(state,action)
+	return {
+		text:'特别爱笑可脾气暴躁'
+	}
+}
+export default connect(mapStateToProps)(Sub);
+// export default Sub;
