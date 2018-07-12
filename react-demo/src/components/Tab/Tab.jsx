@@ -1,8 +1,10 @@
-import React,{Component} from 'react';
-import './Tab.scss';
-import TabTit from './TabTit';
-import TabCon from './TabCon';
-import PropTypes from 'prop-types';
+import React,{Component} from 'react'
+import './Tab.scss'
+import TabTit from './TabTit'
+import TabCon from './TabCon'
+import PropTypes from 'prop-types'
+import axios from 'axios'
+
 export default class Tab extends Component{
 	constructor(){
 		super();
@@ -22,7 +24,11 @@ export default class Tab extends Component{
 			activeIndex:0
 		}
 	}
-	// 
+	componentDidMount(){
+		axios.get('/users1').then(success=>{
+			console.log(success)
+		})
+	}
 	static contextTypes={
 		name:PropTypes.string
 	}

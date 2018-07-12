@@ -3,13 +3,13 @@ import {render} from 'react-dom';
 import Home from '../components/Home';
 import Mine from '../components/Mine';
 import NoFound from '../components/NoFound';
-import Qq from '../components/Qq';
+import Qq from '../components/Qq'; 
 import {Route, BrowserRouter as Router,Switch,Redirect,Prompt} from 'react-router-dom';
 import Sub from './../components/SubRou';
 const Routers=()=>(
 	<Router>
 		<div>
-			<Prompt when={true} message='您确定要离开当前页面吗' />
+			{/* <Prompt when={true} message='您确定要离开当前页面吗' /> */}
 			<Switch>
 				<Route path='/home' component={Home}></Route>
 				<Route path='/shop' component={Qq}></Route>
