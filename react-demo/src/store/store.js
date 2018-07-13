@@ -1,5 +1,5 @@
 import {createStore} from 'redux'
-var store=createStore((state={name:'王小宠'},action)=>{
+import reducer from './reducer'
 
-});
+var store=createStore(reducer);
 export default store;

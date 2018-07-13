@@ -3,10 +3,22 @@ import Header from '../Header';
 import Content from '../Content';
 import Footer from '../Footer';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux' 
+
+var changeName=(props)=>{
+	const {dispatch,totle}=props;
+	if(totle<10){
+		dispatch({
+			type:'CHANGE'
+		})
+	}
+	
+}
 const Mine=(props)=>{
 	return (
 		<div>
-			<Header title={'我的'} />
+			<Header title={props.name+props.totle} />
+			<button onClick={()=>{changeName(props)}}>改变state.mine的name属性</button>
 			<Content />
 			<ul>
 				<li><Link to={`${props.match.url}/one`}>二级1</Link></li>
@@ -17,4 +29,12 @@ const Mine=(props)=>{
 		</div>
 	)
 }
-export default Mine;
+// export default Mine;
+const mapStateToProps=(state,action)=>{
+	// console.log(state.mine)
+	return {
+		name:state.mine.name,
+		totle:state.mine.totle
+	}
+}
+export default connect(mapStateToProps)(Mine);

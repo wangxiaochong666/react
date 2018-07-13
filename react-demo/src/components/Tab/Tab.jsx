@@ -25,11 +25,12 @@ export default class Tab extends Component{
 		}
 	}
 	componentDidMount(){
-		axios.get('/users2').then(success=>{
-			console.log(success)
-		}).catch((e)=>{
-			throw Error(e)
-		})
+		//拦截请求
+		// axios.get('/users2').then(success=>{
+		// 	console.log(success)
+		// }).catch((e)=>{
+		// 	throw Error(e)
+		// })
 	}
 	static contextTypes={
 		name:PropTypes.string
