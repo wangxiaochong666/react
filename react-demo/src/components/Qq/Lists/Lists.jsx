@@ -53,7 +53,6 @@ export default class Lists extends Component{
 	render(){
 		this.titleFn='我是你的好友'
 		// console.log(this.title)
-		// var action=this.props.states?'action':'';
 		return (
 			<div className={`list-item ${this.action}`}
 			onTouchStart={this.touchstart}
