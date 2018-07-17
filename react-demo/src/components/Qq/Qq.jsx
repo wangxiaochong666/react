@@ -16,25 +16,9 @@ class Qq extends Component{
 	}
 	changeList=(idx)=>{
 		this.props.dispatch({
-			type:'CHANGE-STATE'
+			type:'CHANGE-STATE',
+			idx
 		})
-		// var flag=true;
-		// var newList=[...this.state.lists];
-		// for(var i=0;i<newList.length;i++){
-		// 	if(newList[i].states===1){
-		// 		newList[i].states=0;
-		// 		flag=false;
-		// 	}
-		// }
-		// if(!flag){
-		// 	this.setState(item=>{
-		// 		return item.lists=newList
-		// 	})
-		// }else{
-		// 	this.setState(item=>{
-		// 		return item.lists[idx].states=1;
-		// 	})
-		// }	
 	}
 	render(){
 		return(

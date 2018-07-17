@@ -51,16 +51,28 @@ const initalState={
     ]
 }
 const reducer=(state=initalState,action)=>{
-    // var newState={...state}
+    var newState={...state}
     switch(action.type){
         case 'CHANGE-STATE':
+        // var flag=true;
+        for(var i=0;i<newState.lists.length;i++){
+			if(newState.lists[i].states===1){
+				newState.lists[i].states=0;
+				// flag=false;
+			}
+		}
+        // if(flag){
+            newState.lists[action.idx].states=1;
+        // }
         return {
             ...state,
+            lists: [...newState.lists]
         };
         case 'DELETE':
-            // newState.lists.splice(action.idx,1);
+            newState.lists.splice(action.idx,1)
             return {
                 ...state,
+                lists: [...newState.lists]
             };
         ;
         default: return state;

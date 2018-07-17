@@ -8,7 +8,7 @@ import {Route, BrowserRouter as Router,Switch,Redirect,Prompt} from 'react-route
 import Sub from './../components/SubRou';
 const Routers=()=>(
 	<Router>
-		<div>
+		<div style={{height:'100%'}}>
 			{/* <Prompt when={true} message='您确定要离开当前页面吗' /> */}
 			<Switch>
 				<Route path='/home' component={Home}></Route>
