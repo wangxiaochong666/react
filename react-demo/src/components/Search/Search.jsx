@@ -11,19 +11,18 @@ export default class Search extends Component{
         })
     }
     sureBtn=()=>{
+        this.state.value.trim()&&
         this.props.history.push({
             pathname : '/home' ,
-            search:'?the=search',
+            search:`?search=${this.state.value}`,
             query:{search:this.state.value}
         })
-        // this.props.history.push({ pathname : '/home' ,query:{search:this.state.value} })
     }
     render(){
         return (
             <div>
                 <input type="text" value={this.state.value} onChange={(e)=>this.changeVal(e)} />
                 <button onClick={this.sureBtn}>确定</button>
-                {/* <Link to={{pathname:'/home',query:{search:this.state.value}}}>确定</Link> */}
             </div>
         )
     }
