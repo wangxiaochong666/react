@@ -13,12 +13,12 @@ const Routers=()=>(
 		<div style={{height:'100%'}}>
 			{/* <Prompt when={true} message='您确定要离开当前页面吗' /> */}
 			<Switch>
-				<Route path='/home' component={Home}></Route>
+				<Route exact path='/home' component={Home}></Route>
 				<Route path='/shop' component={Qq}></Route>
 				<Route exact path='/mine' component={Mine}></Route>
 				<Route path='/mine/:type' component={Sub}></Route>
 				<Route path='/search' component={Search}></Route>
-				<Redirect from='/' to='/home' />
+				{/* <Redirect from='/' to='/home' /> */}
 				<Route default component={NoFound}></Route>
 			</Switch>
 		</div>

@@ -20,7 +20,7 @@ export default class Footers extends Component{
 		}
 		return(
 			<div style={Itemstyle}>
-				<NavLink activeStyle={{background:'green'}} to='/home' style={spanStyle}>首页</NavLink>
+				<NavLink activeStyle={{background:'green'}} to='/home' exact style={spanStyle}>首页</NavLink>
 				<NavLink activeStyle={{background:'green'}} to='/shop' style={spanStyle}>商城</NavLink>
 				<NavLink activeStyle={{background:'green'}} to='/mine' style={spanStyle}>我的</NavLink>
 			</div>

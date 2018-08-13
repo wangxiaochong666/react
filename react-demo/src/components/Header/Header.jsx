@@ -19,7 +19,7 @@ const Headers=(props)=>{
 			{
 				/\/mine/.test(location.pathname)?
 				<span style={spanStyle} onClick={()=>{history.push('/home')}}>返回</span>
-				:''
+				:null
 			}
 			{props.title?props.title:"首页"}
 		</div>
