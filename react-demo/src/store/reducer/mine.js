@@ -1,5 +1,5 @@
 const initalState={
-    name:"mine",
+    name:"我的",
     totle:1
 }
 const reducer=(state=initalState,aciton)=>{

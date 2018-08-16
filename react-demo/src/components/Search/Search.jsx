@@ -20,7 +20,7 @@ export default class Search extends Component{
     }
     render(){
         return (
-            <div>
+            <div className='con-container'>
                 <input type="text" value={this.state.value} onChange={(e)=>this.changeVal(e)} />
                 <button onClick={this.sureBtn}>确定</button>
             </div>

@@ -22,8 +22,8 @@ class Qq extends Component{
 	}
 	render(){
 		return(
-			<div className='over-dom-box'>
-				<div className='over-dom-content'>
+			<div className='con-container'>
+				<div className='con-tit'>
 					{
 						this.props.lists.map((item,idx)=>{
 							return <Lists key={idx}

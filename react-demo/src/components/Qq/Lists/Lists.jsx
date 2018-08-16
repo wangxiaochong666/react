@@ -52,9 +52,8 @@ export default class Lists extends Component{
 	}
 	render(){
 		this.titleFn='我是你的好友'
-		// console.log(this.title)
 		return (
-			<div className={`list-item ${this.action}`}
+			<div className={`list-item trans ${this.action}`}
 			onTouchStart={this.touchstart}
 			onTouchMove={this.touchmove}
 			onTouchEnd={this.touchend}>

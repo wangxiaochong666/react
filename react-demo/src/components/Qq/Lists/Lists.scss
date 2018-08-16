@@ -1,7 +1,6 @@
 .list-item{
 	height:90px;
 	line-height:90px;
-	transition: all .5s linear;
 	position:relative;
 	img{
 		width:80px;
@@ -12,6 +11,9 @@
 	span{
 		padding-left:20px;
 		color:blue;
+	}
+	&.trans{
+		transition: all .5s linear;
 	}
 	&.action{
 		transform:translateX(-60px);
