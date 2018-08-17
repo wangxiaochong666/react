@@ -29,7 +29,6 @@ const changeCount=(e,props)=>{
 }
 
 const Home=(props)=>{
-	console.log(props)
 	return (
 		<div className='con-container'>
 			<div className='con-tit'>

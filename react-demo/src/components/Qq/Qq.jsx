@@ -43,7 +43,7 @@ class Qq extends Component{
 }
 const mapStateToProps=(state,action)=>{
 	return {
-		lists:state.shop.lists,
+		lists:state.list.lists,
 	}
 }
 export default connect(mapStateToProps)(Qq)
